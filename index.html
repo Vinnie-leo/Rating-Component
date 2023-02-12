@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+    
     <div class="rating-box">
         
         <img src="/images/icon-star.svg">
@@ -21,18 +22,45 @@
             All feedback is appreciated to help us improve our offering!
         </p>
 
-        <div class="btn-group">
-            <button class="btn1">1</button>
-            <button class="btn2">2</button>
-            <button class="btn3">3</button>
-            <button class="btn4">4</button>
-            <button class="btn5">5</button>
-        </div>
+        <form class="btn-group">
+            <input class="btn" type="button" value="1">
+            <input class="btn" type ="button" value="2">
+            <input class="btn" type ="button" value="3">
+            <input class="btn" type ="button" value="4">
+            <input class="btn" type ="button" value="5">
+        </form>
 
-        <button class="submit">SUBMIT</button>
+        <button class="submit" type="submit">SUBMIT</button>
+
+        
 
 
     </div>
+    
+    <p class="msg"></p>
+
+    <script>
+        let btns = document.querySelectorAll('input');
+        let rating = 0;
+
+        for (i of btns){
+            i.addEventListener('click',function(){
+                rating = this.value;
+                console.log(rating);
+                document.querySelector('.msg').innerHTML = `You rated us ${rating} stars`;
+            });
+        }
+
+        console.log(rating);
+
+        
+        
+    
+
+        
+
+
+    </script>
     
 </body>
 </html>
